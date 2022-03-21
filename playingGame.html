@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Game</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/playingGame.css">
+    <link rel="stylesheet" href="./assets/vendor/fontawesome-free-6.1.0-web/css/all.css">
+</head>
+
+<body>
+    <div id="header">
+
+        <img class="logo" src="./assets/images/Quizz_new.png" alt="">
+
+        <ul class="nav">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="#">PLAY</a></li>
+            <li><a href="./Collection.html">COLLECTION</a></li>
+        </ul>
+        <div class="loginButton"></div>
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <div id="questionTypes">
+        <div class="questionTypes__Container">
+            <div class="ez">
+                <p>Dễ</p>
+            </div>
+
+            <div class="med">
+                <p>Trung bình</p>
+            </div>
+
+            <div class="hard">
+                <p>Khó</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="playingGame">
+
+        <div class="label">
+            <img class="label--elephantImg" src="./assets/images/EleAndQuestionChar.png" alt="">
+            <img class="label--newImg" src="./assets/images/NEW.png" alt="">
+        </div>
+        <!-- End of label -->
+
+        <!-- Start of achievements -->
+        <div class="achievements">
+            <img src="./assets/images/cup.png" alt="" class="label--achieve">
+            <p class="text--achieve">0/0</p>
+        </div>
+        <!-- End of achievements -->
+
+        <!-- Start of button -->
+        <div class="containBox--button audioAndCloseButton">
+            <div class="containBox--information">
+                <i class="infButton--cssBigger Button--cssBigger fa-solid fa-circle-info"></i>
+                <div class="infButton--information">
+                    Để mở khóa được thành tích:\n\t - Hoàn thành chơi 10 câu\n\t - Thắng 6/10
+                </div>
+            </div>
+            <div class="containBox--audiobutton">
+                <i class="audioButton--cssBigger Button--cssBigger fa-solid fa-volume-high">
+                    <audio src="./assets/audio/quiz_bg2.mp3" type="audio/mp4"></audio>
+                </i>
+                <!-- <i class="fa-solid fa-volume-xmark"></i> -->
+            </div>
+            <div class="containBox--closebutton">
+                <i class="closeButton--cssBigger Button--cssBigger fa-solid fa-rectangle-xmark"></i>
+            </div>
+        </div>
+        <!-- End of button -->
+
+        <!-- Start of question -->
+        <div class="question">
+            <p id="question"></p>
+        </div>
+        <!-- End of question -->
+
+        <!-- Start of answers -->
+        <div class="answers">
+            <div class="answers__containtBox answers__containtBox--box1">
+                <span class="overlayAnswers"></span>
+                <p class="answers__answer1"></p>
+            </div>
+            <div class="answers__containtBox answers__containtBox--box2">
+                <span class="overlayAnswers"></span>
+                <p class="answers__answer2"></p>
+            </div>
+            <div class="answers__containtBox answers__containtBox--box3">
+                <span class="overlayAnswers"></span>
+                <p class="answers__answer3"></p>
+            </div>
+            <div class="answers__containtBox answers__containtBox--box4">
+                <span class="overlayAnswers"></span>
+                <p class="answers__answer4"></p>
+            </div>
+
+            <!-- Audio for correct/Incorrect answer -->
+            <!-- Correct Audio -->
+            <audio class="audio--correct" src="./assets/audio/correct_answer.mp3" type="audio/mp4"></audio>
+            <!-- Incorrect Audio -->
+            <audio class="audio--incorrect" src="./assets/audio/wrong_answer.mp3" type="audio/mp4"></audio>
+        </div>
+        <!-- End of answers -->
+        
+        <div class="summary">
+            <div class="summary__overlay overlay"></div>
+            <div class="summary__containBox">
+                <!-- Start of button of summary-->
+                <div class="summary__containBox--button audioAndCloseButton">
+                    <div class="containBox--closebutton">
+                        <i class="closeButton--cssBigger Button--cssBigger fa-solid fa-rectangle-xmark"></i>
+                    </div>
+                    <div class="containBox--audiobutton">
+                        <i class="audioButton--cssBigger Button--cssBigger fa-solid fa-volume-high">
+                            <!-- <audio src="./assets/audio/WIN_20220308_15_08_07_Pro.mp4" type="audio/mp4"></audio> -->
+                        </i>
+                    </div>
+                </div>
+                <!-- End of button of summary-->
+                
+                <!-- Start of header summary-->
+                <div class="summary__header">Tóm lược</div>
+                <!-- End of header of summary-->
+
+                <!-- Start of content of summary-->
+                <div class="summary__containBox--Content">
+                    <div class="summary__containBox--Content__currentResult">
+                        <div class="currentResult__correct">
+                            <p>2</p>
+                            <p>Chính xác</p>
+                        </div>
+                        <div class="currentResult__incorrect">
+                            <p>2</p>
+                            <p>Không chính xác</p>
+                        </div>
+                    </div>
+
+                    <div class="summary__containBox--Content__currentAnimalsReadyToUnclock">
+                        <div class="containBox--Content__currentAnimalsReadyToUnclock--header">Mới</div>
+                        <ul class="containBox--Content__currentAnimalsReadyToUnclock--Animals">
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- End of content of summary-->
+
+                <!-- Start of footer of summary-->
+                <div class="summary__containBox--arrow-right">
+                    <div class="arrow-right__border">
+                        <i class="arrowButton fa-solid fa-right-long"></i>
+                    </div>
+                </div>
+                <!-- End of footer of summary-->
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="./assets/scripts/playingGame.js"></script>
+</body>
+
+</html>

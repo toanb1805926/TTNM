@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Quizz</title>
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custome css file link -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+    <link rel="stylesheet" href="./assets/vendor/fontawesome-free-6.1.0-web/css/all.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+
+            <img class="logo" src="./assets/images/Quizz_new.png" alt="">
+
+            <ul class="nav">
+                <li><a href="#">HOME</a></li>
+                <li><a href="./playingGame.html">PLAY</a></li>
+                <li><a href="./Collection.html">COLLECTION</a></li>
+                <li><a href="#about">ABOUT</a></li>
+            </ul>
+
+            <div class="loginButton">
+                <div>Login</div>
+            </div>
+
+        </div>
+
+        <!-- Start of loginContainer -->
+
+        <div class="loginContainer Log-RegContainer">
+            <div class="overlay"></div>
+            <div class="loginForm Log-RegForm">
+                <div class="loginForm__Logo Log-RegLogo">
+                    <img src="./assets/images/Quizz_new.png" alt="">
+                </div>
+
+                <div class="loginForm__closeButton Log-RegCloseButton">
+                    <i class="loginForm__closeIcon Log-RegCloseIcon fa-solid fa-circle-xmark"></i>
+                </div>
+
+                <div class="loginForm__formContainer Log-RegFormContainer">
+                    <input type="text" class="loginUsername Log-RegForm__formContainer--Allfield" placeholder="Tên người dùng/ Email">
+                    <input type="password" class="loginPassword Log-RegForm__formContainer--Allfield" placeholder="Mật khẩu">
+                    <button class="loginConfirm Log-RegForm__formContainer--submitButton">Đăng nhập</button>
+                </div>
+
+                <div class="loginForm__messageRegister Log-RegMessageRegister">
+                    <p>Bạn chưa có tài khoản? <u>Tạo tài khoản</u></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of loginContainer -->
+        <!-- Start of registerContainer -->
+
+        <div class="registerContainer Log-RegContainer">
+            <div class="overlay"></div>
+            <div class="registerForm Log-RegForm">
+                <div class="registerForm__Logo Log-RegLogo">
+                    <img src="./assets/images/Quizz_new.png" alt="">
+                </div>
+
+                <div class="registerForm__closeButton Log-RegCloseButton">
+                    <i class="registerForm__closeIcon Log-RegCloseIcon fa-solid fa-circle-xmark"></i>
+                </div>
+
+                <div class="registerForm__formContainer Log-RegFormContainer">
+                    <input type="text" class="Log-RegForm__formContainer--Allfield" placeholder="Tên người dùng">
+                    <input type="text" class="Log-RegForm__formContainer--Allfield" placeholder="Email">
+                    <input type="password" class="Log-RegForm__formContainer--Allfield" placeholder="Mật khẩu">
+                    <input type="password" class="Log-RegForm__formContainer--Allfield" placeholder="Xác nhân mật khẩu">
+
+                    <button class="Log-RegForm__formContainer--submitButton">Đăng ký</button>
+                </div>
+
+                <div class="registerForm__messageLogin Log-RegMessageRegister">
+                    <p>Bạn đã có tài khoản? <u>Đăng nhập</u></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of registerContainer -->
+
+        <div id='playing-game'>
+            <!--image slider start-->
+            <div class="slider">
+                <div class="slides">
+                    <!--radio buttons start-->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <!--radio buttons end-->
+                    <!--slide images start-->
+                    <div class="slide first">
+                        <img src="./assets/images/dv2.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/images/dv1.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/images/dv3.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/images/dv4.jpg" alt="">
+                    </div>
+                    <!--slide images end-->
+                    <!--automatic navigation start-->
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+                    <!--automatic navigation end-->
+                </div>
+                <!--manual navigation start-->
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+                <!--manual navigation end-->
+            </div>
+            <!--image slider end-->
+
+            <!-- box-container start -->
+            <div class="box-container">
+                <h1 class="heading">
+                    <span>D</span>
+                    <span>O</span>
+                    <!-- <span class="space"></span> -->
+                    <br> <br>
+                    <span>Y</span>
+                    <span>O</span>
+                    <span>U</span>
+                    <!-- <span class="space"></span> -->
+                    <br> <br>
+                    <span>K</span>
+                    <span>N</span>
+                    <span>O</span>
+                    <span>W</span>
+                    <!-- <span class="space"></span> -->
+                    <br> <br>
+                    <span>T</span>
+                    <span>H</span>
+                    <span>E</span>
+                    <span>M</span>
+                    <span>?</span>
+                </h1>
+                <input type="button" value="PLAY NOW">
+            </div>
+            <!-- box-container end -->
+
+            <script type="text/javascript">
+                var counter = 1;
+                setInterval(function () {
+                    document.getElementById('radio' + counter).checked = true;
+                    counter++;
+                    if (counter > 4) {
+                        counter = 1;
+                    }
+                }, 5000);
+            </script>
+        </div>
+
+        <div id='collection'>
+            <div class="box-container">
+                <div class="content">
+                    <h3>KÌ NHÔNG</h3>
+                    <p>
+                        Vietnamese name: Nhông hàng rào<br>
+                        Local name: Kì nhông<br>
+                        Science name: Calotes versicolor (Daudin, 1802)<br>
+                        Branch: chordata</p>
+                    <button type="button" name="button">Read more</button>
+                </div>
+                <img src="./assets/images/Collection1.JPG" alt="">
+            </div>
+            <div class="box-container">
+                <div class="content">
+                    <h3>BÙ TỌT</h3>
+                    <p>
+                        Vietnamese name: Chàng xanh<br>
+                        Local name: Bù tọt<br>
+                        Science name: Hylarana erythraea (Schlegel, 1837)<br>
+                        Branch: chordata</p>
+                    <button type="button" name="button">Read more</button>
+                </div>
+                <img src="./assets/images/Collection2.JPG" alt="">
+            </div>
+            <div class="box-container">
+                <div class="content">
+                    <h3>TRĂN ĐẤT</h3>
+                    <p>
+                        Vietnamese name: Trăn lưới<br>
+                        Local name: Trăn đất<br>
+                        Science name: Python molurus (Linnaeus, 1758)<br>
+                        Branch: chordata</p>
+                    <button type="button" name="button">Read more</button>
+                </div>
+                <img src="./assets/images/Collection4.JPG" alt="">
+            </div>
+            <div class="box-container">
+                <div class="content">
+                    <h3>Collection</h3>
+                    <p>Collection: 30 <br> Click to see details of the animals.</p>
+                    <button type="button" name="button">Go to collection</button>
+                </div>
+                <img src="./assets/images/Collection.jpg" alt="">
+            </div>
+        </div>
+
+        <div id='about'>
+
+            <h1 class="heading">
+                <span>m</span>
+                <span>e</span>
+                <span>m</span>
+                <span>b</span>
+                <span>e</span>
+                <span>r</span>
+            </h1>
+
+            <div class="box-container">
+                <!-- first member -->
+                <div class="box first-box">
+                    <img class="image" src="./assets/images/Toan_nguyen.jpg" alt="">
+                    <div class="info">
+                        <h3 class="title">Thanh Toan</h3>
+                        <span class="post">Web designer / developer</span>
+                        <div class="share">
+                            <a href="#" class="fab fa-facebook-f"></a>
+                            <a href="#" class="fab fa-twitter"></a>
+                            <a href="#" class="fab fa-instagram"></a>
+                            <a href="#" class="fab fa-linkedin"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- second member -->
+                <div class="box second-box">
+                    <img class="image" src="./assets/images/Toan_Ho.jpg" alt="">
+                    <div class="info">
+                        <h3 class="title">Thien Toan</h3>
+                        <span class="post">Font-end developer</span>
+                        <div class="share">
+                            <a href="#" class="fab fa-facebook-f"></a>
+                            <a href="#" class="fab fa-twitter"></a>
+                            <a href="#" class="fab fa-instagram"></a>
+                            <a href="#" class="fab fa-linkedin"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- third member -->
+                <div class="box third-box">
+                    <img class="image" src="./assets/images/Luc_Nong.jpg" alt="">
+                    <div class="info">
+                        <h3 class="title">Thanh Luc</h3>
+                        <span class="post">Back-end developer</span>
+                        <div class="share">
+                            <a href="#" class="fab fa-facebook-f"></a>
+                            <a href="#" class="fab fa-twitter"></a>
+                            <a href="#" class="fab fa-instagram"></a>
+                            <a href="#" class="fab fa-linkedin"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">Enjoy with us.</div>
+    </div>
+    <script src="./assets/scripts/index.js"></script>
+</body>
+
+</html>

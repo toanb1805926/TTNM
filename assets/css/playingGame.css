@@ -1,0 +1,478 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#header{
+    z-index: 100;
+}
+
+.overlay{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 10;
+}
+
+#playingGame{
+    display: none;
+}
+
+/* ------------------Start of questionTypes ------------------ */
+
+#questionTypes{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: purple;
+}
+
+.questionTypes__Container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.questionTypes__Container div {
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.questionTypes__Container div:hover{
+    color: white;
+    border: 2px solid white;
+    width: 230px;
+    height: 230px;
+}
+
+.questionTypes__Container .ez{
+    background-color: deepskyblue;
+}
+
+.questionTypes__Container .med{
+    background-color: orange;
+}
+
+.questionTypes__Container .hard{
+    background-color: red;
+}
+
+.questionTypes__Container div p{
+    position: absolute;
+    font-size: 30px;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+
+/* ------------------End of questionTypes ------------------ */
+/* ------------------Start of label ------------------ */
+
+#playingGame {
+    width: 100vw;
+    background-color: #461A42;
+    min-height: 100vh;
+}
+
+.label{
+    background-color: #C4C4C4;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    top: 10px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.label .label--elephantImg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.label .label--newImg{
+    width: 55%;
+    height: 55%;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+
+
+/* ------------------End of label ------------------ */
+/* ------------------Start of achievements ------------------ */
+
+.achievements {
+    width: 180px;
+    height: 70px;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.achievements .label--achieve{
+    height: 100%;
+}
+
+.achievements .text--achieve{
+    font-size: 35px;
+    color: white;
+}
+
+/* ------------------End of achievements ------------------ */
+
+/* ------------------Start of information,audio,close button ------------------ */
+
+.containBox--information{
+    position: relative;
+}
+
+.infButton--information{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    top: 48px;
+    right: 0;
+    background-color: darkgray;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 1px grey;
+    z-index: 1;
+    display: none;
+    padding: 17px 20px;
+    font-size: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.329);
+}
+
+.containBox--information:hover .infButton--information{
+    display: block;
+}
+
+.audioAndCloseButton{
+    position: absolute;
+    display: flex;
+    right: 20px;
+    top: 10px;
+    align-items: center;
+}
+
+.Button--cssBigger{
+    font-size: 40px;
+    margin: 5px;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.audioButton--cssBigger{
+    font-size: 30px;
+}
+
+.Button--cssBigger:hover{
+    color: white;
+}
+
+/* ------------------End of information,audio,close button ------------------ */
+
+/* ------------------Start of open achievements ------------------ */
+.openAchievements{
+    position: fixed;
+    /* background-color: #a9a9a98f; */
+    background-color: darkgray;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.increaseAchivement{
+    width: 500px;
+    height: 250px;
+    /* background-color: rebeccapurple; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.increaseAchivement__imageBox{
+    flex: 1;
+    /* border: 2px solid red; */
+}
+
+.increaseAchivement__textBox{
+    flex: 1;
+    /* border: 2px solid blue; */
+    display: flex;
+    align-items: center;
+}
+
+.increaseAchivement__imageBox--img{
+    width: 100%;
+}
+
+.increaseAchivement__textBox--text{
+    /* width: 100%; */
+    /* text-align: center; */
+    font-size: 80px;
+    transition: .5s ease;
+}
+
+/* ------------------End of open achievements ------------------ */
+
+/* ------------------Start of question ------------------ */
+
+.question{
+    width: 100vw;
+    min-height: 300px;
+    position: relative;
+}
+
+.question p {
+    width: 100%;
+    font-size: 35px;
+    padding: 0 13%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ------------------End of question ------------------ */
+/* ------------------Start of answers ------------------ */
+.answers{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.answers__containtBox{
+    width: 250px;
+    height: 230px;
+    color: white;
+    border: 2px solid black;
+    position: relative;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.answers__containtBox:hover{
+    opacity: calc(10);
+}
+
+.overlayAnswers{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 226px;
+    background-color: #f9f9f91f;
+    position: absolute;
+    border-radius: 10%;
+    transition: 3s ease;
+}
+
+.answers__containtBox--box1{
+    background-color: #2F6DAE;
+}
+
+.answers__containtBox--box2{
+    background-color: #2C9CA6;
+}
+
+.answers__containtBox--box3{
+    background-color: #ECA82C;
+}
+
+.answers__containtBox--box4{
+    background-color: #D4546A;
+}
+
+.answers__containtBox p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 25px;
+}
+
+.audio--correct,
+.audio--incorrect{
+    display: none;
+}
+
+/* ------------------End of answers ------------------ */
+
+/* ------------------Start of summary ------------------ */
+
+.summary{
+    display: none;
+}
+
+.summary__containBox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background-color: rgba(186, 186, 186, 1);
+    z-index: 10;
+    border-radius: 7px;
+}
+
+.summary__containBox--button{
+    left: 5px;
+    top: 5px;
+}
+
+.summary__containBox--button * > *{
+    color: rgba(0, 0, 0, 0.43);
+}
+
+.summary__containBox--button * > *:hover{
+    color: black;
+}
+
+.summary__header{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.summary__containBox--Content{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    width: 100%;
+    align-items: center;
+    height: 250px;
+}
+
+.summary__containBox--Content__currentResult{
+    display: flex;
+    flex: 1;
+}
+
+.summary__containBox--Content__currentResult > * {
+    flex: 1;
+    min-width: 120px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.summary__containBox--Content__currentResult > *:nth-child(2n){
+    width: 185px;
+    background-image: linear-gradient(306deg, #edc6c67d, #ffffff), url(./../images/wrong.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: red;
+    border: 1px solid red;
+}
+
+.summary__containBox--Content__currentResult > *{
+    background-image: linear-gradient(306deg, #9ae39a2b, #ffffff), url(./../images/correct-hi.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid green;
+    color: green;
+    font-size: 20px;
+    font-weight: 600;
+}
+.summary__containBox--Content__currentAnimalsReadyToUnclock{
+    margin-top: 7px;
+    flex: 3;
+}
+
+.summary__containBox--arrow-right{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.arrow-right__border{
+    background-color: rgba(0, 0, 0, 0.43);
+    border-radius: 5px;
+    padding: 5px 7px;
+}
+
+.arrowButton{
+    font-size: 30px;
+    color: rgba(186, 186, 186, 1);
+    cursor: pointer;
+}
+
+.arrow-right__border:hover{
+    background-color: black;
+}
+
+.summary__containBox--Content__currentAnimalsReadyToUnclock{
+    background-image: linear-gradient(270deg, #fb9494a6, #3fe53f5e);
+    /* background-color: #9f9f9fa6; */
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.containBox--Content__currentAnimalsReadyToUnclock--header{
+    margin: 5px;
+    font-size: 25px;
+    border-bottom: 2px solid black;
+    width: 350px;
+    text-align: center;
+}
+
+.containBox--Content__currentAnimalsReadyToUnclock--Animals{
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+
+.containBox--Content__currentAnimalsReadyToUnclock--Animals > *{
+    width: 50%;
+    text-align: center;
+    height: 20%;
+    padding: 7px 0;
+    font-weight: bold;
+}
+/* ------------------End of summary ------------------ */
