@@ -139,6 +139,7 @@ var idsOfUncommonKind = [4,5];
 var idsOfRareKind = [6];
 var audio = null;
 var isplayaudio = null;
+var isCloseAble = null;
 
 var currentIdOfAnimalBeingAsked = null;
 var currentQuestion = null;
@@ -247,11 +248,13 @@ const HandleLoadNumberOfAnimalsAndNumberOfAnimalsOpened = () => {
 
 // Xử lý đóng playing Game
 document.querySelector('.closeButton--cssBigger').onclick = () => {
-    document.getElementById('header').style.display = 'flex';
-    document.querySelector('#questionTypes').style.display = 'block';
-    document.querySelector('.overlay').style.display = 'block';
-    document.getElementById('playingGame').style.display = 'none';
-    audio.pause();
+    if(isCloseAble){
+        document.getElementById('header').style.display = 'flex';
+        document.querySelector('#questionTypes').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+        document.getElementById('playingGame').style.display = 'none';
+        if(isplayaudio) HandleSetturnOnOrOffAudio();
+    }
 }
 
 // Chọn level and play game:
@@ -274,6 +277,8 @@ document.querySelectorAll('.questionTypes__Container > div').forEach((element) =
         HandleSetNumberOfAnimal();
         // Khởi tạo audio
         initAudio();
+        // Kích hoạt nút đóng trò chơi
+        isCloseAble = true;
 
         // bắt đầu chơi game 10 vòng
         runGame();
@@ -378,7 +383,7 @@ document.querySelector('.summary__containBox--button .containBox--closebutton').
     document.querySelector('.overlay').style.display = 'block';
     document.getElementById('playingGame').style.display = 'none';
     document.querySelector('.summary').style.display = 'none';
-    audio.pause();
+    if(isplayaudio) HandleSetturnOnOrOffAudio();
 }
 
 // Chọn randomNumber
@@ -447,11 +452,15 @@ document.querySelectorAll('.answers .answers__containtBox').forEach((element, in
                 ele.style.display = 'block';
             })
         }
+        let HandleSetClickableCloseButton = () => {
+            document.querySelector('')
+        }
 
         let HandleSelectAnswers = () => {
             return new Promise((resolve, reject) => {
                 HandleSelected();
                 HandleHiddenUnselected();
+                isCloseAble = false;
                 setTimeout(() => {
                     if(element.innerText===currentCorrectAnswer){
                         numberOfCorrectRound+=1;
@@ -475,6 +484,7 @@ document.querySelectorAll('.answers .answers__containtBox').forEach((element, in
             })
             .finally(() => {
                 return new Promise((resolve, reject) => {
+
                     setTimeout(() => {
                         element.style.transition = 'none';
                         element.style.backgroundColor = oldColor;
@@ -493,6 +503,7 @@ document.querySelectorAll('.answers .answers__containtBox').forEach((element, in
             .catch(() => {})
             .finally(() => {
                 summary();
+                isCloseAble = true;
             })
     }
 });
@@ -543,36 +554,49 @@ const initAudio = () => {
     audio = document.querySelector('#playingGame > div.containBox--button.audioAndCloseButton > div.containBox--audiobutton > i > audio');
     audio.autoplay = true;
     audio.loop = true;
-    audio.play();
     audio.currentTime = 0;
+    audio.play();
     isplayaudio = true;
+    document.querySelectorAll('.audioButton--cssBigger').forEach(ele => {
+        ele.className = 'audioButton--cssBigger Button--cssBigger fa-solid fa-volume-high';
+    })
 }
 
-// Xử lý turnOn/Off audio
+
+// Handle turnOn/Off audio
+const HandleSetturnOnOrOffAudio = () => {
+    console.log('Trạng thái trước khi xét: ', isplayaudio);
+    if(isplayaudio) {
+        audio.pause();
+        document.querySelectorAll('.audioButton--cssBigger').forEach(ele => {
+            ele.className = 'audioButton--cssBigger Button--cssBigger fa-solid fa-volume-xmark';
+        })
+    }
+    else{
+        audio.play();
+        document.querySelectorAll('.audioButton--cssBigger').forEach(ele => {
+            ele.className = 'audioButton--cssBigger Button--cssBigger fa-solid fa-volume-high';
+        })
+    }
+    isplayaudio = !isplayaudio;
+    console.log('Trạng thái sau trước khi xét: ', isplayaudio);
+}
 document.querySelectorAll('.audioButton--cssBigger').forEach(ele => {
     ele.onclick = () => {
-        if(isplayaudio) {
-            audio.pause();
-            ele.className = 'audioButton--cssBigger Button--cssBigger fa-solid fa-volume-xmark';
-        }
-        else {
-            audio.play();
-            ele.className = 'audioButton--cssBigger Button--cssBigger fa-solid fa-volume-high';
-        }
-        isplayaudio = !isplayaudio;
+        HandleSetturnOnOrOffAudio();
     }
 })
 
-// Xử lý chọn đáp án đúng
+// Xử lý phát âm thanh chọn đáp án đúng
 const HandleSignalTheCorrectAnswer = () => {
     let correctAudio = document.querySelector('#playingGame > div.answers > audio.audio--correct');
-    correctAudio.play();
+    if(isplayaudio) correctAudio.play();
 }
 
-// Xử lý chọn đáp án sai
+// Xử lý phát âm thanh chọn đáp án sai
 const HandleSignalTheInCorrectAnswer = () => {
     let inCorrectAudio = document.querySelector('#playingGame > div.answers > audio.audio--incorrect');
-    inCorrectAudio.play();
+    if(isplayaudio) inCorrectAudio.play();
 }
 
 // Hàm Unlock các ĐV sẵn sàng để mở.
