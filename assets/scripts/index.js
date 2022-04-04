@@ -53,3 +53,15 @@ document.querySelector('.registerForm__messageLogin').onclick = () => {
     document.querySelector('.loginContainer').style.display = 'block';
 }
 // End of scripts for Login and Register form
+
+// Handle 'PLAY NOW' button
+document.querySelector('#playing-game > div.box-container > input[type=button]').onclick = () => {
+    window.location.href = './playingGame.html';
+}
+
+// Hanld 'Read more' button
+document.querySelectorAll('#collection > div > div > button').forEach((ele) => {
+    ele.onclick = () => {
+        window.location.href = './Collection.html';
+    }
+});
